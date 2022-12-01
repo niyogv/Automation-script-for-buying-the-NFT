@@ -21,9 +21,9 @@ class Test_qamarket:
         self.driver.maximize_window()
         self.driver.find_element_by_xpath('//*[@id="root"]/div[1]/div[1]/div[2]/div').click()
         user=self.driver.find_element_by_xpath('//*[@id="root"]/div[1]/div[1]/div[10]/div/div[2]/div/div/div/div[2]/div/div/input')
-        user.send_keys('niyog12feb')
+        user.send_keys('')# username who is part of the marketplace
         password=self.driver.find_element_by_xpath('//*[@id="root"]/div[1]/div[1]/div[10]/div/div[2]/div/div/div/div[3]/div/div/input')
-        password.send_keys('Test@123')
+        password.send_keys('')# password for the username
         self.driver.find_element_by_xpath("//button[@class='MuiButtonBase-root MuiButton-root MuiButton-contained']").click()
         time.sleep(10)
         self.driver.find_element_by_link_text("Explore").click()
@@ -44,7 +44,7 @@ class Test_qamarket:
         time.sleep(10)
         handles = self.driver.window_handles
         size = len(handles)
-        parent_handle = self.driver.current_window_handle
+        parent_handle = self.driver.current_window_handle # swtiches to child window (cash free) and performs the action to buy the NFT 
         for x in range(size):
             if handles[x] != parent_handle:
                 self.driver.switch_to.window(handles[x])
@@ -53,7 +53,7 @@ class Test_qamarket:
                 self.driver.find_element_by_xpath("//div[@class='row social-icons']/div[2]/form").click()
                 break
         time.sleep(30)
-        self.driver.switch_to.window(parent_handle)
+        self.driver.switch_to.window(parent_handle)# switches back to the parent window from the child window and verifies whether the NFT bought is under the user profile
         self.driver.find_element_by_xpath("//div[@class='styles_account__3MgT6 styles_menuLink__17kgw']").click()
         self.driver.find_element_by_xpath("//ul[@class='MuiList-root MuiMenu-list styles_menuList__33Jfh MuiList-padding']/div[1]").click()
         time.sleep(2)
