@@ -1,5 +1,5 @@
 # This is a test automation script in python
-# Application name:qamarket.moiverse.io
+# Application name:
 # Programmer name : Niyog v
 # Date of programming : 24 feb 2022
 #
