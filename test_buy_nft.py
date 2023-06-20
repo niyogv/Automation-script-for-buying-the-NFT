@@ -17,7 +17,7 @@ class Test_qamarket:
     @pytest.fixture()
     def test_invoke(self):
         self.driver=webdriver.Chrome(executable_path='/Applications/chromedriver')
-        self.driver.get('https://qamarket.moiverse.io/')
+        self.driver.get('https://www.example.com/')
         self.driver.maximize_window()
         self.driver.find_element_by_xpath('//*[@id="root"]/div[1]/div[1]/div[2]/div').click()
         user=self.driver.find_element_by_xpath('//*[@id="root"]/div[1]/div[1]/div[10]/div/div[2]/div/div/div/div[2]/div/div/input')
